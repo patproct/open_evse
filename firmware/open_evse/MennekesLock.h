@@ -1,5 +1,9 @@
-#pragma once
+// -*- C++ -*-
 /*
+ * Open EVSE Firmware
+ *
+ * Copyright (c) 2016 Sam C. Lin <lincomatic@gmail.com>
+ *
  * This file is part of Open EVSE.
 
  * Open EVSE is free software; you can redistribute it and/or modify
@@ -17,22 +21,14 @@
  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
  * Boston, MA 02111-1307, USA.
  */
+#pragma once
 
-typedef enum {
-  PILOT_STATE_P12,PILOT_STATE_PWM,PILOT_STATE_N12} 
-PILOT_STATE;
-class J1772Pilot {
-  PILOT_STATE m_State;
-#ifndef PAFC_PWM
-  DigitalPin pin;
-#endif // !PAFC_PWM
-public:
-  J1772Pilot() {
-  }
+class MennekesLock {
+  DigitalPin pinA;
+  DigitalPin pinB;
+ public:
+  MennekesLock() {}
   void Init();
-  void SetState(PILOT_STATE pstate); // P12/N12
-  PILOT_STATE GetState() { 
-    return m_State; 
-  }
-  int SetPWM(int amps); // 12V 1KHz PWM
+  void Lock();
+  void Unlock();
 };
