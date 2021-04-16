@@ -415,17 +415,17 @@ extern AutoCurrentCapacityController g_ACCController;
 #define DEFAULT_SERVICE_LEVEL 2 // 1=L1, 2=L2
 
 // current capacity in amps
-// Note from patproct: Changed L1 from 16 to 24 to allow for TT-30 charging
-#define MAX_CURRENT_CAPACITY_L1 24 // J1772 Max for L1 on a 20A circuit = 16, 15A circuit = 12
-// Note from patproct: Changed L1 from 80 to 40 to prevent accidental overcurrent situations on 50A circuits
-#define MAX_CURRENT_CAPACITY_L2 40 // J1772 Max for L2 = 80
+#define DEFAULT_CURRENT_CAPACITY_L1 12
+#define DEFAULT_CURRENT_CAPACITY_L2 24
 
 // minimum allowable current in amps
 #define MIN_CURRENT_CAPACITY_J1772 6
 
 // maximum allowable current in amps
+// Note from patproct: Changed L1 from 16 to 24 to allow for TT-30 charging
 #define MAX_CURRENT_CAPACITY_L1 24 // J1772 Max for L1 on a 20A circuit = 16, 15A circuit = 12
-#define MAX_CURRENT_CAPACITY_L2 80 // J1772 Max for L2 = 80
+// Note from patproct: Changed L1 from 80 to 40 to prevent accidental overcurrent situations on 50A circuits
+#define MAX_CURRENT_CAPACITY_L2 40 // J1772 Max for L2 = 80
 
 //J1772EVSEController
 
